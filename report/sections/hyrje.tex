@@ -1,0 +1,91 @@
+\newpage
+\section{Introduction}
+\subsection{Dataset description}
+This dataset contains detailed health indicators collected from a large population and is designed to support the analysis and prediction of diabetes risk. It includes a variety of columns describing lifestyle factors and demographic data, such as high blood pressure (HighBP), high cholesterol (HighChol), body mass index (BMI), smoking and alcohol use, physical activity, diet, mental and physical health status, as well as gender, age, education level, and income.
+
+The main variable of interest is Diabetes\_binary, which indicates whether an individual has been diagnosed with diabetes (1) or not (0). This dataset can be used to develop classification models aimed at predicting diabetes risk based on known behavioral and health-related factors.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+index & feature & description \\
+\hline
+Diabetes\_binary & 0 = no diabetes, 1 = diabetes & Diabetes status \\
+\hline
+HighBP & 0 = no high BP, 1 = high BP & High blood pressure \\
+\hline
+HighChol & 0 = no high cholesterol, 1 = high cholesterol & High cholesterol \\
+\hline
+CholCheck & 0 = no cholesterol check in 5 years, 1 = yes & Cholesterol check \\
+\hline
+BMI & Continuous & Body Mass Index \\
+\hline
+Smoker & 0 = no, 1 = yes & Smoked at least 100 cigarettes in life \\
+\hline
+Stroke & 0 = no, 1 = yes & Ever had a stroke \\
+\hline
+HeartDiseaseorAttack & 0 = no, 1 = yes & Heart disease or heart attack history \\
+\hline
+PhysActivity & 0 = no, 1 = yes & Physical activity in past 30 days (not job-related) \\
+\hline
+Fruits & 0 = no, 1 = yes & Consumes fruit 1+ times per day \\
+\hline
+Veggies & 0 = no, 1 = yes & Consumes vegetables 1+ times per day \\
+\hline
+HvyAlcoholConsump & 0 = no, 1 = yes & Heavy alcohol consumption \\
+\hline
+AnyHealthcare & 0 = no, 1 = yes & Healthcare coverage \\
+\hline
+NoDocbcCost & 0 = no, 1 = yes & Couldn’t see a doctor due to cost \\
+\hline
+GenHlth & 1 = excellent, 5 = poor & General health status \\
+\hline
+MentHlth & 1-30 days & Poor mental health days in the past 30 days \\
+\hline
+PhysHlth & 1-30 days & Physical illness/injury days in past 30 days \\
+\hline
+DiffWalk & 0 = no, 1 = yes & Difficulty walking or climbing stairs \\
+\hline
+Sex & 0 = female, 1 = male & Gender \\
+\hline
+Age & 1 = 18-24, 9 = 60-64, 13 = 80 or older & Age category \\
+\hline
+Education & 1-6 & Education level \\
+\hline
+Income & 1-8 & Income scale \\
+\hline
+\end{tabular}
+\caption{List of all attributes in the dataset}
+\end{table}
+
+
+\subsection{Motivation of the study}
+
+The motivation of this study is based on three main questions related to understanding the risk factors for diabetes and how these factors can be used to predict the likelihood of developing the disease:
+
+\begin{enumerate}
+    \item \textbf{What are the main factors that predict the risk of diabetes?} One objective of this study is to identify the health and lifestyle factors most strongly associated with the risk of developing diabetes. These factors, such as \texttt{BMI}, \texttt{Age}, and \texttt{Physical\_Health}, can help in early detection and prevention of diabetes.
+    
+    \item \textbf{Can a subset of factors be used to accurately predict whether an individual has diabetes?} Another important question is whether only a few factors, such as \texttt{BMI} and \texttt{Age}, can be used to make an accurate prediction of diabetes, simplifying the prediction process without losing too much accuracy.
+    
+    \item \textbf{How can machine learning models be used to predict diabetes risk more accurately?} This broader question relates to using advanced techniques to help create a reliable model for predicting diabetes. Machine learning can uncover relationships and patterns that may not be immediately apparent using traditional methods.
+\end{enumerate}
+
+Through these questions, the study aims to improve our understanding of the factors influencing diabetes risk and to develop a simple yet accurate method for predicting who may be at risk.
+
+
+\subsection{Selection of algorithms for the dataset}
+
+For this dataset, where the target variable is \texttt{Diabetes\_binary} (diabetes status), three well-known machine learning algorithms have been chosen: \textbf{MLP (Multilayer Perceptron)}, \textbf{Autoencoder}, and \textbf{I TRETI}. These algorithms are suitable for this type of problem for various reasons:
+
+\begin{itemize}
+    \item \textbf{MLP (Multilayer Perceptron)}: \\
+    MLP is a type of neural network that uses multiple processing layers and is excellent for handling classification and regression problems. This algorithm is powerful for capturing complex relationships between different features. For our dataset, it is well-suited to model the connections between health indicators and diabetes risk, as it can effectively analyze factors such as \texttt{BMI}, \texttt{Age}, \texttt{Physical\_Health}, \texttt{Smoking}, and other related variables.
+
+    \item \textbf{Autoencoder}: \\
+    An Autoencoder is a type of neural network used primarily for unsupervised learning and dimensionality reduction. It can help identify hidden patterns in the data and is useful for reducing the number of features while maintaining the underlying structure. For our dataset, it can assist in detecting underlying factors contributing to diabetes risk by learning an efficient representation of the data. Autoencoders are also useful for feature extraction, especially in cases where the data is high-dimensional.
+    
+    \item \textbf{[Third Algorithm]}: \\
+    flasum per tretin
+\end{itemize}

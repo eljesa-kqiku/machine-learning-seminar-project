@@ -1,0 +1,71 @@
+\section{Preprocessing}
+
+At this part of the project, we begin with the data preprocessing phase. This step is necessary to prepare the dataset for machine learning, ensuring the data is ready for analysis and modeling.
+
+\subsection{Data cleaning}
+\subsubsection{Removing Duplicates}
+For this step, we first analyze if there are any duplicate rows in the dataset using the following Python code:
+
+\lstinputlisting[language=python]{code/duplicate_remover.py}
+
+
+After running the code, we found that there are 1635 duplicate rows. However, since these duplicates could potentially represent individuals who share the same health indicators (such as age, BMI, or smoking status), and not necessarily represent data entry errors, we decided not to remove them. This is because, in medical datasets, it is common for multiple individuals to have identical data points across various features. Therefore, removing these rows could lead to loss of valid data.
+
+\begin{lstlisting}[language=bash]
+Found 1635 duplicate rows.
+\end{lstlisting}
+
+As shown, there are 1635 duplicate rows, but they are not removed to ensure we preserve all relevant data for analysis.
+
+\subsubsection{Handling missing values}
+
+In this step, we aim to check whether the dataset contains any missing values. Missing data can impact the accuracy of machine learning models, so identifying and addressing it is an important part of the data preprocessing process. Below is the Python code used for this task:
+
+\lstinputlisting[language=python]{code/missing_values.py}
+
+The output after executing the script was:
+
+\begin{lstlisting}[language=bash]
+Diabetes_binary         0
+HighBP                  0
+HighChol                0
+CholCheck               0
+BMI                     0
+Smoker                  0
+Stroke                  0
+HeartDiseaseorAttack    0
+PhysActivity            0
+Fruits                  0
+Veggies                 0
+HvyAlcoholConsump       0
+AnyHealthcare           0
+NoDocbcCost             0
+GenHlth                 0
+MentHlth                0
+PhysHlth                0
+DiffWalk                0
+Sex                     0
+Age                     0
+Education               0
+Income                  0
+\end{lstlisting}
+
+As we can see, all columns in the dataset have a count of 0 missing values. This means the dataset is complete in terms of data presence, and no additional cleaning or imputation for missing values is necessary.
+
+\subsection{Data integration}
+In this project, all the required data is already combined into a single CSV file. Therefore, no additional integration from multiple sources is necessary. The dataset is self-contained and ready for the next steps of data preprocessing.
+
+\subsection{Data transformation}
+
+In this step, we apply feature scaling to the dataset in order to standardize the features. Scaling is necessary because some machine learning algorithms, such as the ones we have chosen for this analysis, are sensitive to the scale of the data. These algorithms work better when all features have a similar range.
+
+\subsubsection{Data scaling}
+
+In this step, we apply feature scaling to the dataset in order to standardize the features. Scaling ensures that all features have a similar range. The StandardScaler from the \texttt{sklearn.preprocessing} library is used to perform scaling.
+
+The following Python code demonstrates the process of scaling the features of the dataset:
+
+\lstinputlisting[language=python]{code/scaling.py}
+
+
+This code scales all the features of the dataset using the \texttt{StandardScaler}, which standardizes the features by removing the mean and scaling to unit variance. The scaled features are then saved in a new CSV file called \texttt{diabetes\_scaled.csv}. 
