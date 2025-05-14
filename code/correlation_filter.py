@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('diabetes_binary_5050split_health_indicators_BRFSS2015.csv')
+df = pd.read_csv('datasets/diabetes_binary_5050split_health_indicators_BRFSS2015.csv')
 corr_matrix = df.corr()
 
 # Unstack and filter correlations

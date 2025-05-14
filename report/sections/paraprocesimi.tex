@@ -6,7 +6,7 @@ At this part of the project, we begin with the data preprocessing phase. This st
 \subsubsection{Removing Duplicates}
 For this step, we first analyze if there are any duplicate rows in the dataset using the following Python code:
 
-\lstinputlisting[language=python]{code/duplicate_remover.py}
+\lstinputlisting[language=python]{../code/duplicate_remover.py}
 
 
 After running the code, we found that there are 1635 duplicate rows. However, since these duplicates could potentially represent individuals who share the same health indicators (such as age, BMI, or smoking status), and not necessarily represent data entry errors, we decided not to remove them. This is because, in medical datasets, it is common for multiple individuals to have identical data points across various features. Therefore, removing these rows could lead to loss of valid data.
@@ -21,7 +21,7 @@ As shown, there are 1635 duplicate rows, but they are not removed to ensure we p
 
 In this step, we aim to check whether the dataset contains any missing values. Missing data can impact the accuracy of machine learning models, so identifying and addressing it is an important part of the data preprocessing process. Below is the Python code used for this task:
 
-\lstinputlisting[language=python]{code/missing_values.py}
+\lstinputlisting[language=python]{../code/missing_values.py}
 
 The output after executing the script was:
 
@@ -65,7 +65,7 @@ In this step, we apply feature scaling to the dataset in order to standardize th
 
 The following Python code demonstrates the process of scaling the features of the dataset:
 
-\lstinputlisting[language=python]{code/scaling.py}
+\lstinputlisting[language=python]{../code/scaling.py}
 
 
 This code scales all the features of the dataset using the \texttt{StandardScaler}, which standardizes the features by removing the mean and scaling to unit variance. The scaled features are then saved in a new CSV file called \texttt{diabetes\_scaled.csv}. 
