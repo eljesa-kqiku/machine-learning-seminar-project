@@ -59,6 +59,13 @@ In this project, all the required data is already combined into a single CSV fil
 
 In this step, we apply feature scaling to the dataset in order to standardize the features. Scaling is necessary because some machine learning algorithms, such as the ones we have chosen for this analysis, are sensitive to the scale of the data. These algorithms work better when all features have a similar range.
 
+\subsubsection{Handling outliers}
+
+The first step we used to analyze the outlier or noise values was checking the min, max, average and mode of each attribute. From these data we can conclude that there are no noises since all the min-max fields are within the range declared on the metadata.
+\noindent Next we tried finding any outlier with the interquartile range, but this method didn't give
+
+\lstinputlisting[language=python]{../code/outliers_handler.py}
+
 \subsubsection{Data scaling}
 
 In this step, we apply feature scaling to the dataset in order to standardize the features. Scaling ensures that all features have a similar range. The StandardScaler from the \texttt{sklearn.preprocessing} library is used to perform scaling.
