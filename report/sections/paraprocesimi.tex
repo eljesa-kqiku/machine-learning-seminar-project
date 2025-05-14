@@ -21,6 +21,15 @@ As shown, there are 1635 duplicate rows, but they are not removed to ensure we p
 
 In this step, we aim to check whether the dataset contains any missing values. Missing data can impact the accuracy of machine learning models, so identifying and addressing it is an important part of the data preprocessing process. Below is the Python code used for this task:
 
+\subsubsection{Handling outliers}
+
+The first step we used to analyze the outlier or noise values was checking the min, max, average and mode of each attribute. From these data we can conclude that there are no noises since all the min-max fields are within the range declared on the metadata.\\
+
+\noindent Next, we applied the interquartile range (IQR) method to identify outliers. However, this approach was not very effective, as it flagged 40,205 records as containing at least one outlier attribute—more than half of the dataset.
+Because this didn’t seem like a logical result, we decided to ignore this method and try something else.
+
+\noindent Finally, we used the z-score method, which was more suitable for our dataset. This method found 1,927 outlier records, which is only $2.7\%$ of the total dataset. Since this number was small, we thought it was reasonable to remove these records without further analysis, as we still had enough data left to work with.
+
 \lstinputlisting[language=python]{../code/missing_values.py}
 
 The output after executing the script was:
@@ -58,11 +67,6 @@ In this project, all the required data is already combined into a single CSV fil
 \subsection{Data transformation}
 
 In this step, we apply feature scaling to the dataset in order to standardize the features. Scaling is necessary because some machine learning algorithms, such as the ones we have chosen for this analysis, are sensitive to the scale of the data. These algorithms work better when all features have a similar range.
-
-\subsubsection{Handling outliers}
-
-The first step we used to analyze the outlier or noise values was checking the min, max, average and mode of each attribute. From these data we can conclude that there are no noises since all the min-max fields are within the range declared on the metadata.
-\noindent Next we tried finding any outlier with the interquartile range, but this method didn't give
 
 \lstinputlisting[language=python]{../code/outliers_handler.py}
 
