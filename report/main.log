@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.14)  16 MAY 2025 12:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.14)  16 MAY 2025 23:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/albana/Documents/master/Semestri 2/Machine learning/Projekti Ushtrime/machine-learning-seminar-project/report/main.tex"
-(/Users/albana/Documents/master/Semestri 2/Machine learning/Projekti Ushtrime/machine-learning-seminar-project/report/main.tex
+**/Users/eljesakqiku/Documents/Fakulteti/sem2/ML/machine-learning-seminar-project/report/main.tex
+(/Users/eljesakqiku/Documents/Fakulteti/sem2/ML/machine-learning-seminar-project/report/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -905,41 +905,43 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-Underfull \hbox (badness 10000) in paragraph at lines 26--27
+) (../code/missing_values.py)
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-(../code/missing_values.py)
 
-[5] (../code/outliers_handler.py
 
-[6]) (../code/scaling.py)) (./sections/pergatitja.tex
+[5] (../code/outliers_handler.py)
 
-[7] (../code/correlation.py)
-<images/diabetes_correlation_matrix.png, id=282, 867.24pt x 722.7pt>
+[6] (../code/scaling.py
+
+[7])) (./sections/pergatitja.tex (../code/correlation.py)
+<images/diabetes_correlation_matrix.png, id=304, 867.24pt x 722.7pt>
 File: images/diabetes_correlation_matrix.png Graphic file (type png)
 <use images/diabetes_correlation_matrix.png>
 Package pdftex.def Info: images/diabetes_correlation_matrix.png  used on input line 18.
 (pdftex.def)             Requested size: 350.33727pt x 291.95305pt.
- (../code/correlation_filter.py
 
-[8
+
+[8] (../code/correlation_filter.py)) (./sections/implementimi.tex
+
+[9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.4 df 
-       = pd.read_csv('datasets/diabetes_binary_5050split_health_indicators_B... <./images/diabetes_correlation_matrix.png>])) (./sections/implementimi.tex
+l.4 \subsection
+               {Multilayer Perceptron (MLP)} <./images/diabetes_correlation_matrix.png>]
 LaTeX Font Info:    Font shape `OT1/cmbr/m/it' in size <10> not available
 (Font)              Font shape `OT1/cmbr/m/sl' tried instead on input line 8.
-<images/mlp-diagram.png, id=310, 1148.29pt x 1023.825pt>
+<images/mlp-diagram.png, id=363, 1148.29pt x 1023.825pt>
 File: images/mlp-diagram.png Graphic file (type png)
 <use images/mlp-diagram.png>
 Package pdftex.def Info: images/mlp-diagram.png  used on input line 14.
 (pdftex.def)             Requested size: 350.33727pt x 312.35208pt.
 
 
-[9
+[10
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -960,32 +962,32 @@ Overfull \hbox (4.75204pt too wide) in paragraph at lines 34--35
 
 
 
-[10
+[11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.37 ...utlisting[language=python]{../code/mlp.py}
                                                    <./images/mlp-diagram.png>] (../code/mlp.py
 
-[11]
+[12]
 
-[12])
-<images/confusion_matrix_full.png, id=479, 632.3625pt x 477.785pt>
+[13])
+<images/confusion_matrix_full.png, id=516, 632.3625pt x 477.785pt>
 File: images/confusion_matrix_full.png Graphic file (type png)
 <use images/confusion_matrix_full.png>
 Package pdftex.def Info: images/confusion_matrix_full.png  used on input line 85.
 (pdftex.def)             Requested size: 250.24199pt x 189.06929pt.
 
 
-[13]
-<images/confusion_matrix_interactions.png, id=487, 632.3625pt x 477.785pt>
+[14]
+<images/confusion_matrix_interactions.png, id=523, 632.3625pt x 477.785pt>
 File: images/confusion_matrix_interactions.png Graphic file (type png)
 <use images/confusion_matrix_interactions.png>
 Package pdftex.def Info: images/confusion_matrix_interactions.png  used on input line 123.
 (pdftex.def)             Requested size: 250.24199pt x 189.06929pt.
 
 
-[14
+[15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1002,7 +1004,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
 )
 
-[15
+[16
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1020,18 +1022,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 86B205A3D4C6645C2FFFA395860CB515;3777.
  ) 
 Here is how much of TeX's memory you used:
- 25336 strings out of 473190
- 462402 string characters out of 5715800
- 1462957 words of memory out of 5000000
- 47782 multiletter control sequences out of 15000+600000
+ 25395 strings out of 473190
+ 463208 string characters out of 5715800
+ 1466958 words of memory out of 5000000
+ 47808 multiletter control sequences out of 15000+600000
  566036 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,93p,1113b,2069s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,93p,1081b,2069s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hftl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbmr10.pfb>
-Output written on main.pdf (15 pages, 1105094 bytes).
+Output written on main.pdf (16 pages, 1109311 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 568 compressed objects within 6 object streams
- 329 named destinations out of 1000 (max. 500000)
+ 662 PDF objects out of 1000 (max. 8388607)
+ 610 compressed objects within 7 object streams
+ 362 named destinations out of 1000 (max. 500000)
  214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

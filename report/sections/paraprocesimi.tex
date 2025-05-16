@@ -21,13 +21,6 @@ As shown, there are 1635 duplicate rows, but they are not removed to ensure we p
 
 In this step, we aim to check whether the dataset contains any missing values. Missing data can impact the accuracy of machine learning models, so identifying and addressing it is an important part of the data preprocessing process. Below is the Python code used for this task:
 
-\subsubsection{Handling outliers}
-
-The first step we used to analyze the outlier or noise values was checking the min, max, average and mode of each attribute. From these data we can conclude that there are no noises since all the min-max fields are within the range declared on the metadata.\\
-
-\noindent Next, we applied the interquartile range (IQR) method to identify outliers. However, this approach was not very effective, as it flagged 40,205 records as containing at least one outlier attribute—more than half of the dataset.
-Because this didn’t seem like a logical result, we decided to ignore this method and try something else.
-
 \noindent Finally, we used the z-score method, which was more suitable for our dataset. This method found 1,927 outlier records, which is only $2.7\%$ of the total dataset. Since this number was small, we thought it was reasonable to remove these records without further analysis, as we still had enough data left to work with.
 
 \lstinputlisting[language=python]{../code/missing_values.py}
@@ -61,14 +54,57 @@ Income                  0
 
 As we can see, all columns in the dataset have a count of 0 missing values. This means the dataset is complete in terms of data presence, and no additional cleaning or imputation for missing values is necessary.
 
+\subsubsection{Handling outliers}
+
+The first step we used to analyze the outlier or noise values was checking the min, max, average and mode of each attribute. From these data we can conclude that there are no noises since all the min-max fields are within the range declared on the metadata.\\
+
+\noindent Next, we applied the interquartile range (IQR) method to identify outliers. However, this approach was not very effective, as it flagged 40,205 records as containing at least one outlier attribute—more than half of the dataset.\\
+Because this didn’t seem like a logical result, we decided to ignore this method and try something else.
+
+\noindent The next test was the z-score method and this one was far more reasonable giving 1927 outlier lines. Since that would be less than 3$\%$ of the dataset, it is acceptable to remove the outlier lines completely. That left our dataset with 68,765 remainin records, a considerable number of rows.
+
+\lstinputlisting[language=python]{../code/outliers_handler.py}
+
+\begin{lstlisting}
+####### Summary of the dataframe #######
+                       Min   Max       Mean  Mode
+Diabetes_binary        0.0   1.0   0.500000   0.0
+HighBP                 0.0   1.0   0.563458   1.0
+HighChol               0.0   1.0   0.525703   1.0
+CholCheck              0.0   1.0   0.975259   1.0
+BMI                   12.0  98.0  29.856985  27.0
+Smoker                 0.0   1.0   0.475273   0.0
+Stroke                 0.0   1.0   0.062171   0.0
+HeartDiseaseorAttack   0.0   1.0   0.147810   0.0
+PhysActivity           0.0   1.0   0.703036   1.0
+Fruits                 0.0   1.0   0.611795   1.0
+Veggies                0.0   1.0   0.788774   1.0
+HvyAlcoholConsump      0.0   1.0   0.042721   0.0
+AnyHealthcare          0.0   1.0   0.954960   1.0
+NoDocbcCost            0.0   1.0   0.093914   0.0
+GenHlth                1.0   5.0   2.837082   3.0
+MentHlth               0.0  30.0   3.752037   0.0
+PhysHlth               0.0  30.0   5.810417   0.0
+DiffWalk               0.0   1.0   0.252730   0.0
+Sex                    0.0   1.0   0.456997   0.0
+Age                    1.0  13.0   8.584055  10.0
+Education              1.0   6.0   4.920953   6.0
+Income                 1.0   8.0   5.698311   8.0
+
+####### Checking for outliers with Interquartile Range (IQR) method #######
+Rows with >=1 outliers: 40205
+
+####### Checking for outliers with Z-Score Method (Assumes Normal Distribution) #######
+Outlier rows (Z-score): 1927
+Cleaned dataset saved as 'dataset_without_outliers.csv'
+\end{lstlisting}
+
 \subsection{Data integration}
 In this project, all the required data is already combined into a single CSV file. Therefore, no additional integration from multiple sources is necessary. The dataset is self-contained and ready for the next steps of data preprocessing.
 
 \subsection{Data transformation}
 
 In this step, we apply feature scaling to the dataset in order to standardize the features. Scaling is necessary because some machine learning algorithms, such as the ones we have chosen for this analysis, are sensitive to the scale of the data. These algorithms work better when all features have a similar range.
-
-\lstinputlisting[language=python]{../code/outliers_handler.py}
 
 \subsubsection{Data scaling}
 
