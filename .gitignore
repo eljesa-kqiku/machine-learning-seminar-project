@@ -1,0 +1,9 @@
+./out
+./idea
+main.aux
+main.fdb_latexmk
+main.fls
+main.log
+main.out
+main.syntex.gz
+main.toc
