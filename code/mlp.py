@@ -9,17 +9,11 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score,
     f1_score, confusion_matrix, ConfusionMatrixDisplay,
-    mean_squared_error, classification_report
+    root_mean_squared_error, classification_report
 )
 
 # 1. Load data
 df = pd.read_csv("datasets/diabetes_scaled.csv")
-
-# 2. Heatmap e korrelacioneve
-plt.figure(figsize=(14, 10))
-sns.heatmap(df.corr(), annot=True, cmap='coolwarm', fmt=".2f")
-plt.title("Heatmap - Korrelacionet midis veçorive")
-plt.show()
 
 # 3. Features & Labels
 X = df.drop("Diabetes_binary", axis=1)
@@ -58,7 +52,7 @@ acc = accuracy_score(y_test, y_pred)
 prec = precision_score(y_test, y_pred)
 rec = recall_score(y_test, y_pred)
 f1 = f1_score(y_test, y_pred)
-rmse = mean_squared_error(y_test, y_pred, squared=False)
+rmse = root_mean_squared_error(y_test, y_pred)
 
 print("Accuracy:", acc)
 print("Precision:", prec)
