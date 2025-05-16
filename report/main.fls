@@ -398,6 +398,19 @@ INPUT ./images/mlp-diagram.png
 INPUT ./images/mlp-diagram.png
 INPUT ./images/mlp-diagram.png
 INPUT ./images/mlp-diagram.png
+INPUT ../code/mlp.py
+INPUT ../code/mlp.py
+INPUT ../code/mlp.py
+INPUT ./images/confusion_matrix_full.png
+INPUT ./images/confusion_matrix_full.png
+INPUT ./images/confusion_matrix_full.png
+INPUT ./images/confusion_matrix_full.png
+INPUT ./images/confusion_matrix_full.png
+INPUT ./images/confusion_matrix_interactions.png
+INPUT ./images/confusion_matrix_interactions.png
+INPUT ./images/confusion_matrix_interactions.png
+INPUT ./images/confusion_matrix_interactions.png
+INPUT ./images/confusion_matrix_interactions.png
 INPUT ./sections/interpretimi.tex
 INPUT ./sections/interpretimi.tex
 INPUT ./sections/interpretimi.tex
@@ -414,6 +427,7 @@ INPUT ./sections/title_page.aux
 INPUT sections/title_page.aux
 INPUT ./main.out
 INPUT ./main.out
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb

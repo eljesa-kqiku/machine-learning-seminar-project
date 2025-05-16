@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.14)  16 MAY 2025 11:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.14)  16 MAY 2025 12:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -843,7 +843,7 @@ Package hyperref Info: Link coloring OFF on input line 62.
 (./sections/title_page.tex
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <10> not available
 (Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 8.
-<images/up_logo.png, id=83, 636.87938pt x 574.39594pt>
+<images/up_logo.png, id=95, 636.87938pt x 574.39594pt>
 File: images/up_logo.png Graphic file (type png)
 <use images/up_logo.png>
 Package pdftex.def Info: images/up_logo.png  used on input line 13.
@@ -917,7 +917,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 [6]) (../code/scaling.py)) (./sections/pergatitja.tex
 
 [7] (../code/correlation.py)
-<images/diabetes_correlation_matrix.png, id=267, 867.24pt x 722.7pt>
+<images/diabetes_correlation_matrix.png, id=282, 867.24pt x 722.7pt>
 File: images/diabetes_correlation_matrix.png Graphic file (type png)
 <use images/diabetes_correlation_matrix.png>
 Package pdftex.def Info: images/diabetes_correlation_matrix.png  used on input line 18.
@@ -932,7 +932,7 @@ l.4 df
        = pd.read_csv('datasets/diabetes_binary_5050split_health_indicators_B... <./images/diabetes_correlation_matrix.png>])) (./sections/implementimi.tex
 LaTeX Font Info:    Font shape `OT1/cmbr/m/it' in size <10> not available
 (Font)              Font shape `OT1/cmbr/m/sl' tried instead on input line 8.
-<images/mlp-diagram.png, id=295, 1148.29pt x 1023.825pt>
+<images/mlp-diagram.png, id=310, 1148.29pt x 1023.825pt>
 File: images/mlp-diagram.png Graphic file (type png)
 <use images/mlp-diagram.png>
 Package pdftex.def Info: images/mlp-diagram.png  used on input line 14.
@@ -944,14 +944,53 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has 
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.18 
-     ]) (./sections/interpretimi.tex) (./sections/referenca.tex
+     ]
+LaTeX Font Info:    Trying to load font information for OMS+cmtl on input line 34.
+LaTeX Font Info:    No file OMScmtl.fd. on input line 34.
+
+
+LaTeX Font Warning: Font shape `OMS/cmtl/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 34.
+
+
+Overfull \hbox (4.75204pt too wide) in paragraph at lines 34--35
+[]\OMS/cmtl/m/n/10 f\OT1/cmtl/m/n/10 'mlp[][]activation': 'relu', 'mlp[][]alpha': 0.001, 'mlp[][]hidden[]layer[]sizes': (100, 50),
+ []
+
+
 
 [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.8 \bibitem{nn1}
-                  <./images/mlp-diagram.png>]
+l.37 ...utlisting[language=python]{../code/mlp.py}
+                                                   <./images/mlp-diagram.png>] (../code/mlp.py
+
+[11]
+
+[12])
+<images/confusion_matrix_full.png, id=479, 632.3625pt x 477.785pt>
+File: images/confusion_matrix_full.png Graphic file (type png)
+<use images/confusion_matrix_full.png>
+Package pdftex.def Info: images/confusion_matrix_full.png  used on input line 85.
+(pdftex.def)             Requested size: 250.24199pt x 189.06929pt.
+
+
+[13]
+<images/confusion_matrix_interactions.png, id=487, 632.3625pt x 477.785pt>
+File: images/confusion_matrix_interactions.png Graphic file (type png)
+<use images/confusion_matrix_interactions.png>
+Package pdftex.def Info: images/confusion_matrix_interactions.png  used on input line 123.
+(pdftex.def)             Requested size: 250.24199pt x 189.06929pt.
+
+
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.126 
+       <./images/confusion_matrix_full.png>]) (./sections/interpretimi.tex) (./sections/referenca.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--12
 []\OT1/cmbr/m/n/10 Michael Nielsen. \OT1/cmbr/m/sl/10 Neu-ral Net-works and Deep Learn-ing\OT1/cmbr/m/n/10 . 2015. Avail-able: []$\OT1/cmtl/m/n/10 http : / /
  []
@@ -963,27 +1002,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
 )
 
-[11] (./main.aux (./sections/title_page.aux))
+[15
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.76 \end{document}
+                    <./images/confusion_matrix_interactions.png>] (./main.aux (./sections/title_page.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CE8870D0266A4AD684B077D88D3AA5A2;3002.
+(rerunfilecheck)             Checksum: 86B205A3D4C6645C2FFFA395860CB515;3777.
  ) 
 Here is how much of TeX's memory you used:
- 25107 strings out of 473190
- 458554 string characters out of 5715800
- 1375954 words of memory out of 5000000
- 47691 multiletter control sequences out of 15000+600000
+ 25336 strings out of 473190
+ 462402 string characters out of 5715800
+ 1462957 words of memory out of 5000000
+ 47782 multiletter control sequences out of 15000+600000
  566036 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,93p,1113b,2069s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hftl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbmr10.pfb>
-Output written on main.pdf (11 pages, 863587 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hftl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbmr10.pfb>
+Output written on main.pdf (15 pages, 1105094 bytes).
 PDF statistics:
- 419 PDF objects out of 1000 (max. 8388607)
- 381 compressed objects within 4 object streams
- 194 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 568 compressed objects within 6 object streams
+ 329 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

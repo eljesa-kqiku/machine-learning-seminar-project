@@ -1,35 +1,28 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 
-from sklearn.model_selection import train_test_split, cross_val_score, cross_validate
-from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split, cross_validate
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score,
     f1_score, confusion_matrix, ConfusionMatrixDisplay,
-    root_mean_squared_error, classification_report
+    classification_report
 )
 
 # 1. Load data
 df = pd.read_csv("datasets/diabetes_scaled.csv")
 
-# 3. Features & Labels
+# 2. Features & Labels
 X = df.drop("Diabetes_binary", axis=1)
 y = df["Diabetes_binary"]
 
-# 4. Train/Test split
+# 3. Train/Test split
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, stratify=y, random_state=42
 )
 
-# 5. Scaling
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-
-# 6. Modeli MLP (në fillim një konfigurim bazik)
+# 4. Define MLP model
 mlp = MLPClassifier(
     hidden_layer_sizes=(100, 50),
     activation='relu',
@@ -40,53 +33,93 @@ mlp = MLPClassifier(
     random_state=42
 )
 
+# 5. Train model
+mlp.fit(X_train, y_train)
 
-# 7. Trajnimi
-mlp.fit(X_train_scaled, y_train)
+# 6. Predict on test set
+y_pred = mlp.predict(X_test)
 
-# 8. Parashikimi
-y_pred = mlp.predict(X_test_scaled)
+# 7. Evaluate metrics
+print("Performance on Full Feature Set:")
+print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+print(f"Precision: {precision_score(y_test, y_pred):.4f}")
+print(f"Recall: {recall_score(y_test, y_pred):.4f}")
+print(f"F1 Score: {f1_score(y_test, y_pred):.4f}")
 
-# 9. Vlerësimi me metrika klasifikimi
-acc = accuracy_score(y_test, y_pred)
-prec = precision_score(y_test, y_pred)
-rec = recall_score(y_test, y_pred)
-f1 = f1_score(y_test, y_pred)
-rmse = root_mean_squared_error(y_test, y_pred)
-
-print("Accuracy:", acc)
-print("Precision:", prec)
-print("Recall:", rec)
-print("F1 Score:", f1)
-print("RMSE:", rmse)
-
-# 10. Confusion matrix vizualisht
+# 8. Confusion matrix visualization
 cm = confusion_matrix(y_test, y_pred)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=mlp.classes_)
 disp.plot(cmap=plt.cm.Blues)
-plt.title("Confusion Matrix")
+plt.title("Confusion Matrix (Full Feature Set)")
 plt.show()
 
-# 11. Cross-validation me vizualizim
-cv_results = cross_validate(mlp, X_train_scaled, y_train,
-                            cv=5,
-                            scoring=["accuracy", "precision", "recall", "f1"],
-                            return_train_score=True)
+# 9. Cross-validation without plot
+cv_results = cross_validate(
+    mlp, X_train, y_train,
+    cv=5,
+    scoring=["accuracy", "precision", "recall", "f1"],
+    return_train_score=True
+)
 
-# Mesataret
-mean_scores = {
-    'accuracy': np.mean(cv_results['test_accuracy']),
-    'precision': np.mean(cv_results['test_precision']),
-    'recall': np.mean(cv_results['test_recall']),
-    'f1': np.mean(cv_results['test_f1']),
-}
+print("\nCross-Validation Mean Scores (5-Fold):")
+for metric in ["accuracy", "precision", "recall", "f1"]:
+    test_score = np.mean(cv_results[f'test_{metric}'])
+    train_score = np.mean(cv_results[f'train_{metric}'])
+    print(f"{metric.capitalize()}: Train = {train_score:.4f}, Test = {test_score:.4f}")
 
-# Bar plot i metrikave nga cross-validation
-plt.figure(figsize=(8, 5))
-sns.barplot(x=list(mean_scores.keys()), y=list(mean_scores.values()))
-plt.title("Metrikat nga Cross Validation (5-Fold)")
-plt.ylim(0.5, 1.0)
-plt.show()
-
-print("\nKlasifikimi Detajuar:\n")
+print("\nDetailed Classification Report (Full Feature Set):")
 print(classification_report(y_test, y_pred, target_names=["No Diabetes", "Diabetes"]))
+
+# === Performance on Selected Features + Interaction Terms ===
+
+# Select features of interest + target
+df_interact = df[["GenHlth", "PhysHlth", "DiffWalk", "Education", "Income", "Diabetes_binary"]].copy()
+
+# Add interaction features
+df_interact["GenHlth_x_PhysHlth"] = df_interact["GenHlth"] * df_interact["PhysHlth"]
+df_interact["PhysHlth_x_DiffWalk"] = df_interact["PhysHlth"] * df_interact["DiffWalk"]
+df_interact["GenHlth_x_DiffWalk"] = df_interact["GenHlth"] * df_interact["DiffWalk"]
+df_interact["Education_x_Income"] = df_interact["Education"] * df_interact["Income"]
+
+# Prepare features and labels
+X_interact = df_interact.drop("Diabetes_binary", axis=1)
+y_interact = df_interact["Diabetes_binary"]
+
+# Train/Test split
+X_train_i, X_test_i, y_train_i, y_test_i = train_test_split(
+    X_interact, y_interact, test_size=0.2, stratify=y_interact, random_state=42
+)
+
+# Define MLP model
+mlp_interact = MLPClassifier(
+    hidden_layer_sizes=(100, 50),
+    activation='relu',
+    solver='sgd',
+    alpha=0.001,
+    learning_rate='adaptive',
+    max_iter=500,
+    random_state=42
+)
+
+# Train model
+mlp_interact.fit(X_train_i, y_train_i)
+
+# Predict on test set
+y_pred_i = mlp_interact.predict(X_test_i)
+
+# Evaluate metrics
+print("\nPerformance on Selected Features + Interactions:")
+print(f"Accuracy: {accuracy_score(y_test_i, y_pred_i):.4f}")
+print(f"Precision: {precision_score(y_test_i, y_pred_i):.4f}")
+print(f"Recall: {recall_score(y_test_i, y_pred_i):.4f}")
+print(f"F1 Score: {f1_score(y_test_i, y_pred_i):.4f}")
+
+# Confusion matrix visualization
+cm_i = confusion_matrix(y_test_i, y_pred_i)
+disp_i = ConfusionMatrixDisplay(confusion_matrix=cm_i, display_labels=mlp_interact.classes_)
+disp_i.plot(cmap=plt.cm.Greens)
+plt.title("Confusion Matrix (Interactions Model)")
+plt.show()
+
+print("\nDetailed Classification Report (Interactions Model):")
+print(classification_report(y_test_i, y_pred_i, target_names=["No Diabetes", "Diabetes"]))
