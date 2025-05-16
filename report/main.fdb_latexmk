@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1747431716.55622 "/Users/albana/Documents/master/Semestri 2/Machine learning/Projekti Ushtrime/machine-learning-seminar-project/report/main.tex" "main.pdf" "main" 1747431718.62438 0
+["pdflatex"] 1747432459.02534 "/Users/albana/Documents/master/Semestri 2/Machine learning/Projekti Ushtrime/machine-learning-seminar-project/report/main.tex" "main.pdf" "main" 1747432461.04875 0
   "../code/correlation.py" 1747343465.44797 475 380910431be093bd945ef4f69486c3f0 ""
   "../code/correlation_filter.py" 1747343465.44843 506 1be6332161106e4092ebfd7cb5765655 ""
   "../code/duplicate_remover.py" 1747343465.44876 351 62fd35f82f3445a0d0ef61ebfd5ef43f ""
@@ -189,17 +189,17 @@
   "images/mlp-loss-curve.png" 1747431353.1793 158598 b5dab5df0210cc583bcdb907616058ab ""
   "images/our-mlp-diagram.png" 1747431353.18051 139141 1f340e015f4a4c9fb308f4ec14f57c5b ""
   "images/up_logo.png" 1747170220.95825 91187 e0c0d8d9d56bc5bca02f61ca3b823bcb ""
-  "main.aux" 1747431718.53861 5919 a96316b0cd8690b46bf9f9e9a24bf56e "pdflatex"
-  "main.out" 1747431718.53994 3777 86b205a3d4c6645c2fffa395860cb515 "pdflatex"
+  "main.aux" 1747432460.96522 5919 5ab99150d1c4912605445cc15e73c3bc "pdflatex"
+  "main.out" 1747432460.96647 3777 86b205a3d4c6645c2fffa395860cb515 "pdflatex"
   "main.tex" 1747343465.47585 1884 328735314a69a0ac44bd3f062e8f8a9e ""
-  "main.toc" 1747431718.54016 1957 57bd2eb504918fc50e34a255a97ee050 "pdflatex"
-  "sections/hyrje.tex" 1747170128.67662 5593 8a59b426a1eae943d93fbae7d7dbeadc ""
+  "main.toc" 1747432460.9667 1957 06febf8ae35ce2046b08b08b2ec9c9a2 "pdflatex"
+  "sections/hyrje.tex" 1747432456.67325 5227 3f94e21049a3afe6a89e66be1ab6378c ""
   "sections/implementimi.tex" 1747431713.95924 9952 0e33a98ab71ff12eed6f8bbb9eaa6be0 ""
   "sections/interpretimi.tex" 1747170128.68309 32 9761a84352b57b04b98ab0a7ae9a6eb6 ""
   "sections/paraprocesimi.tex" 1747431353.14293 6572 6ce1dc634d4d44c1fa84bed86a9f73f9 ""
   "sections/pergatitja.tex" 1747387921.50924 3197 31709722f35cf49f8167424cd88c0f09 ""
   "sections/referenca.tex" 1747170128.6893 515 10a26aa9059f5cf1e4a845a7eff2ea09 ""
-  "sections/title_page.aux" 1747431717.37415 886 f90531494cf9de61bdcc390a1fc09b3d "pdflatex"
+  "sections/title_page.aux" 1747432459.80382 886 f90531494cf9de61bdcc390a1fc09b3d "pdflatex"
   "sections/title_page.tex" 1747387804.25551 783 729b84868a26991cda71d452bddec89a ""
   (generated)
   "main.aux"
