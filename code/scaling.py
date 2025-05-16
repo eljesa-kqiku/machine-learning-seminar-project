@@ -2,7 +2,7 @@ from sklearn.preprocessing import StandardScaler
 import pandas as pd
 
 # Load the dataset
-df = pd.read_csv('datasets/diabetes_binary_5050split_health_indicators_BRFSS2015.csv')
+df = pd.read_csv('datasets/dataset_without_outliers.csv')
 
 # Separate features and target
 X = df.drop(columns=['Diabetes_binary'])  # Features

@@ -13,7 +13,7 @@ from sklearn.metrics import (
 )
 
 # 1. Load data
-df = pd.read_csv("datasets/diabetes_binary_5050split_health_indicators_BRFSS2015.csv")
+df = pd.read_csv("datasets/diabetes_scaled.csv")
 
 # 2. Heatmap e korrelacioneve
 plt.figure(figsize=(14, 10))
