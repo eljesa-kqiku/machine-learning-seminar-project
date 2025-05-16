@@ -401,6 +401,11 @@ INPUT ./images/mlp-diagram.png
 INPUT ../code/mlp.py
 INPUT ../code/mlp.py
 INPUT ../code/mlp.py
+INPUT ./images/our-mlp-diagram.png
+INPUT ./images/our-mlp-diagram.png
+INPUT ./images/our-mlp-diagram.png
+INPUT ./images/our-mlp-diagram.png
+INPUT ./images/our-mlp-diagram.png
 INPUT ./images/confusion_matrix_full.png
 INPUT ./images/confusion_matrix_full.png
 INPUT ./images/confusion_matrix_full.png
@@ -411,6 +416,11 @@ INPUT ./images/confusion_matrix_interactions.png
 INPUT ./images/confusion_matrix_interactions.png
 INPUT ./images/confusion_matrix_interactions.png
 INPUT ./images/confusion_matrix_interactions.png
+INPUT ./images/mlp-loss-curve.png
+INPUT ./images/mlp-loss-curve.png
+INPUT ./images/mlp-loss-curve.png
+INPUT ./images/mlp-loss-curve.png
+INPUT ./images/mlp-loss-curve.png
 INPUT ./sections/interpretimi.tex
 INPUT ./sections/interpretimi.tex
 INPUT ./sections/interpretimi.tex

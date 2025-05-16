@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.14)  16 MAY 2025 23:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.14)  16 MAY 2025 23:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -971,28 +971,52 @@ l.37 ...utlisting[language=python]{../code/mlp.py}
 
 [12]
 
-[13])
-<images/confusion_matrix_full.png, id=516, 632.3625pt x 477.785pt>
+[12])
+<images/our-mlp-diagram.png, id=479, 556.0775pt x 393.47pt>
+File: images/our-mlp-diagram.png Graphic file (type png)
+<use images/our-mlp-diagram.png>
+Package pdftex.def Info: images/our-mlp-diagram.png  used on input line 41.
+(pdftex.def)             Requested size: 375.36299pt x 265.6048pt.
+
+
+[13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.60 \end{verbatim}
+                    <./images/our-mlp-diagram.png>]
+<images/confusion_matrix_full.png, id=509, 632.3625pt x 477.785pt>
 File: images/confusion_matrix_full.png Graphic file (type png)
 <use images/confusion_matrix_full.png>
-Package pdftex.def Info: images/confusion_matrix_full.png  used on input line 85.
+Package pdftex.def Info: images/confusion_matrix_full.png  used on input line 98.
 (pdftex.def)             Requested size: 250.24199pt x 189.06929pt.
 
 
-[14]
-<images/confusion_matrix_interactions.png, id=523, 632.3625pt x 477.785pt>
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.104 
+       <./images/confusion_matrix_full.png>]
+<images/confusion_matrix_interactions.png, id=516, 632.3625pt x 477.785pt>
 File: images/confusion_matrix_interactions.png Graphic file (type png)
 <use images/confusion_matrix_interactions.png>
-Package pdftex.def Info: images/confusion_matrix_interactions.png  used on input line 123.
+Package pdftex.def Info: images/confusion_matrix_interactions.png  used on input line 136.
 (pdftex.def)             Requested size: 250.24199pt x 189.06929pt.
 
 
 [15
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.126 
-       <./images/confusion_matrix_full.png>]) (./sections/interpretimi.tex) (./sections/referenca.tex
+l.146 
+       <./images/confusion_matrix_interactions.png>]
+<images/mlp-loss-curve.png, id=523, 787.94376pt x 392.46625pt>
+File: images/mlp-loss-curve.png Graphic file (type png)
+<use images/mlp-loss-curve.png>
+Package pdftex.def Info: images/mlp-loss-curve.png  used on input line 149.
+(pdftex.def)             Requested size: 300.29344pt x 149.56989pt.
+) (./sections/interpretimi.tex) (./sections/referenca.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--12
 []\OT1/cmbr/m/n/10 Michael Nielsen. \OT1/cmbr/m/sl/10 Neu-ral Net-works and Deep Learn-ing\OT1/cmbr/m/n/10 . 2015. Avail-able: []$\OT1/cmtl/m/n/10 http : / /
  []
@@ -1005,11 +1029,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 )
 
 [16
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.76 \end{document}
-                    <./images/confusion_matrix_interactions.png>] (./main.aux (./sections/title_page.aux))
+                    <./images/mlp-loss-curve.png>] (./main.aux (./sections/title_page.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1022,18 +1046,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 86B205A3D4C6645C2FFFA395860CB515;3777.
  ) 
 Here is how much of TeX's memory you used:
- 25395 strings out of 473190
- 463208 string characters out of 5715800
- 1466958 words of memory out of 5000000
- 47808 multiletter control sequences out of 15000+600000
+ 25377 strings out of 473190
+ 463247 string characters out of 5715800
+ 1441115 words of memory out of 5000000
+ 47802 multiletter control sequences out of 15000+600000
  566036 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,93p,1081b,2069s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrsl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hftl10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbmr10.pfb>
-Output written on main.pdf (16 pages, 1109311 bytes).
+Output written on main.pdf (16 pages, 1257058 bytes).
 PDF statistics:
- 662 PDF objects out of 1000 (max. 8388607)
- 610 compressed objects within 7 object streams
- 362 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 652 PDF objects out of 1000 (max. 8388607)
+ 597 compressed objects within 6 object streams
+ 350 named destinations out of 1000 (max. 500000)
+ 224 words of extra memory for PDF output out of 10000 (max. 10000000)
 

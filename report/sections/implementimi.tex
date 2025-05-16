@@ -36,6 +36,19 @@ The best parameters found were:
 
 \lstinputlisting[language=python]{../code/mlp.py}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/our-mlp-diagram.png} % Make sure the filename matches
+    \caption{Basic structure of a Multilayer Perceptron (MLP) \cite{mlp}.}
+    \label{fig:mlp-arch}
+\end{figure}
+
+\vspace{0.5em}
+
+\noindent
+Figure~\ref{fig:mlp-arch} illustrates the architecture of the Multilayer Perceptron used in our implementation. It includes an input layer that receives features such as \texttt{BMI}, \texttt{Age}, and \texttt{GenHealth}, followed by two hidden layers with 100 and 50 neurons respectively. These layers apply ReLU activation and are fully connected. The final layer outputs a binary prediction indicating whether the individual is diabetic or not.
+
+
 \subsubsection{Results on Full Feature Set}
 
 \begin{verbatim}
@@ -130,6 +143,16 @@ Here again, recall for diabetic cases remains at 80\%, but performance for non-d
 \vspace{1em}
 \noindent
 In both models, recall is prioritized above all, aligning with our goal of reducing undiagnosed diabetic cases. The full-feature model is preferred for balanced performance, but the interaction-based model still holds value in more constrained environments.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/mlp-loss-curve.png} % replace with your filename
+    \caption{Training loss curve for the MLP model over 500 iterations.}
+    \label{fig:mlp_loss_curve}
+    \end{figure}
+
+The loss curve for the diabetes dataset shows a rapid initial decrease followed by convergence, indicating stable training and successful optimization.
+
 
 \subsection{Autoencoder}
 

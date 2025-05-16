@@ -39,6 +39,15 @@ mlp.fit(X_train, y_train)
 # 6. Predict on test set
 y_pred = mlp.predict(X_test)
 
+# Plot loss curve for full feature set
+plt.figure(figsize=(8, 4))
+plt.plot(mlp.loss_curve_)
+plt.title("Loss Curve (Full Feature Set)")
+plt.xlabel("Iterations")
+plt.ylabel("Loss")
+plt.grid(True)
+plt.show()
+
 # 7. Evaluate metrics
 print("Performance on Full Feature Set:")
 print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
@@ -106,6 +115,15 @@ mlp_interact.fit(X_train_i, y_train_i)
 
 # Predict on test set
 y_pred_i = mlp_interact.predict(X_test_i)
+
+# Plot loss curve for selected features + interaction terms
+plt.figure(figsize=(8, 4))
+plt.plot(mlp_interact.loss_curve_)
+plt.title("Loss Curve (Interactions Model)")
+plt.xlabel("Iterations")
+plt.ylabel("Loss")
+plt.grid(True)
+plt.show()
 
 # Evaluate metrics
 print("\nPerformance on Selected Features + Interactions:")
