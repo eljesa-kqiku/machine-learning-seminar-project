@@ -1,49 +1,64 @@
 import numpy as np
 import pandas as pd
-
-from keras import layers
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.svm import SVC
-
-from sklearn.metrics import accuracy_score, classification_report
-
 import keras
+from keras import layers
 from keras.models import Sequential
 from keras.layers import Input, Dense
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import classification_report
 
 X_train = pd.read_csv("datasets/X_train.csv")
 X_test = pd.read_csv("datasets/X_test.csv")
 y_train = pd.read_csv("datasets/y_train.csv")
 y_test = pd.read_csv("datasets/y_test.csv")
 
-input_dim = X_train.shape[1]
-encoding_dim = 2
+class Autoencoder:
+    def __init__(self, encoding_dim, activation1, activation2, optimizer1, optimizer2):
+        self.input_dim = X_train.shape[1]
+        self.encoding_dim = encoding_dim
 
-input_layer = keras.layers.Input(shape=(input_dim,))
-encoder = keras.layers.Dense(encoding_dim, activation="relu")(input_layer)
-decoder = keras.layers.Dense(input_dim, activation="sigmoid")(encoder)
-autoencoder = keras.Model(inputs = input_layer, outputs=decoder)
+        input_layer = keras.layers.Input(shape=(self.input_dim,))
+        encoder = keras.layers.Dense(encoding_dim, activation1)(input_layer)
+        decoder = keras.layers.Dense(self.input_dim, activation2)(encoder)
 
-autoencoder.compile(optimizer="adam", loss="mse")
+        self.autoencoder = keras.Model(inputs=input_layer, outputs=decoder)
+        self.encoder_model = keras.Model(inputs=input_layer, outputs=encoder)
 
-autoencoder.summary()
+        self.autoencoder.compile(optimizer=optimizer1, loss=optimizer2)
+        self.autoencoder.summary()
 
-autoencoder.fit(X_train, X_train, epochs=50, batch_size=32, shuffle=True, validation_data=(X_test, X_test))
-encoder = keras.Model(inputs=autoencoder.input, outputs=autoencoder.layers[1].output)
-encoded_features_train = encoder.predict(X_train)
-encoded_features_test = encoder.predict(X_test)
+    def train(self, X_train, X_test, epochs, batch_size=32):
+        self.autoencoder.fit(
+            X_train, X_train,
+            epochs=epochs,
+            batch_size=batch_size,
+            shuffle=True,
+            validation_data=(X_test, X_test)
+        )
 
-print("Encoded Features Shape (Train):", encoded_features_train.shape)
-print("Encoded Features Shape (Test):", encoded_features_test.shape)
+    def encode(self, X):
+        return self.encoder_model.predict(X)
 
-# model = LogisticRegression() # 68%
-# model = RandomForestClassifier(n_estimators=100, random_state=42) 66%
-# model = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, random_state=42) 74%
-# model = SVC(kernel='rbf', probability=True) 69%
+ae = Autoencoder(
+        encoding_dim=4,
+        activation1='leaky_relu',
+        activation2='sigmoid',
+        optimizer1='adam',
+        optimizer2='mse'
+    )
 
-model.fit(encoded_features_train, y_train)
-y_pred = model.predict(encoded_features_test)
-# accuracy = accuracy_score(y_test, y_pred)
-print(classification_report(y_test, y_pred))
-# print(f"Accuracy with selected features: {accuracy}")
+ae.train(X_train, X_test, epochs=50)
+encoded_train = ae.encode(X_train)
+encoded_test = ae.encode(X_test)
+
+model = GradientBoostingClassifier(
+            n_estimators=100,
+            learning_rate=0.3,
+            random_state=42
+        )
+
+model.fit(encoded_train, y_train.values.ravel())
+y_pred = model.predict(encoded_test)
+
+report = classification_report(y_test, y_pred)
+print(report)

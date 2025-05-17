@@ -45,7 +45,7 @@ class Autoencoder:
 
 ae_param_map = {
     'activation1': ['leaky_relu'],
-    'activation2': ['relu'],
+    'activation2': ['relu', 'sigmoid'],
     'optimizer1': ['adam', 'sgd'],
     'optimizer2': ['mse', 'binary_crossentropy']
 }
