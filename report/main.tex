@@ -32,6 +32,19 @@
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{lightblue}{RGB}{220, 233, 252}
+\definecolor{blue}{RGB}{0, 119, 182}
+\definecolor{lightgreen}{RGB}{220, 255, 240}
+\definecolor{darkgreen}{RGB}{0, 100, 0}
+\definecolor{bordergreen}{RGB}{0, 128, 0}
+
+
+\definecolor{peach}{RGB}{255, 190, 170}
+\definecolor{yellow}{RGB}{252, 239, 145}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \definecolor{lightblue}{RGB}{220, 233, 252}
 \definecolor{blue}{RGB}{0, 119, 182}
@@ -58,6 +71,13 @@
     tabsize=2
 }
 \lstset{style=mystyle}
+
+\usepackage{tcolorbox}
+\newtcbox{\codebox}{on line, box align=base, colback=lightblue, colframe=white,
+    boxsep=0.5pt, left=2pt, right=2pt, top=1pt, bottom=1pt}
+
+\usepackage{tabularx}            % For flexible-width tables
+\usepackage{array}               % For custom column alignment and spacing
 
 \begin{document}
 

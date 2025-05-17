@@ -59,9 +59,11 @@ As we can see, all columns in the dataset have a count of 0 missing values. This
 The first step we used to analyze the outlier or noise values was checking the min, max, average and mode of each attribute. From these data we can conclude that there are no noises since all the min-max fields are within the range declared on the metadata.\\
 
 \noindent Next, we applied the interquartile range (IQR) method to identify outliers. However, this approach was not very effective, as it flagged 40,205 records as containing at least one outlier attribute—more than half of the dataset.\\
-Because this didn’t seem like a logical result, we decided to ignore this method and try something else.
+Because this didn’t seem like a logical result, we decided to ignore this method and try something else.\\
 
-\noindent The next test was the z-score method and this one was far more reasonable giving 1927 outlier lines. Since that would be less than 3$\%$ of the dataset, it is acceptable to remove the outlier lines completely. That left our dataset with 68,765 remainin records, a considerable number of rows.
+\noindent The next test was the z-score method and this one was far more reasonable giving 1927 outlier lines. Since that would be less than 3$\%$ of the dataset, it is acceptable to remove the outlier lines completely. That left our dataset with 68,765 remainin records, a considerable number of rows.\\
+
+\noindent Below is the summary details for all the data, and also the code that was required to generate these results. We have the minimum, maxium, average and the mode of each column. Than, the result of IQR and the z-score method showing the number of outliers thay had detected.
 
 \lstinputlisting[language=python]{../code/outliers_handler.py}
 

@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bd0118d-ee39-4807-8648-485f96be9aca" name="Changes" comment="Finding the best parameters for the Autoencoder">
-      <change afterPath="$PROJECT_DIR$/report/images/autoencoder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/sections/autoencoder.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/autoencoder/separate_code_for_report/preparation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/autoencoder/separate_code_for_report/usage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/autoencoder/autoencoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/autoencoder/autoencoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.toc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/sections/implementimi.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report/sections/implementimi.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/sections/autoencoder.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report/sections/autoencoder.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/sections/paraprocesimi.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report/sections/paraprocesimi.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/sections/title_page.aux" beforeDir="false" afterPath="$PROJECT_DIR$/report/sections/title_page.aux" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +146,7 @@
       <workItem from="1747207398988" duration="1630000" />
       <workItem from="1747262054010" duration="2477000" />
       <workItem from="1747381350563" duration="30000" />
+      <workItem from="1747490273017" duration="4411000" />
     </task>
     <task id="LOCAL-00001" summary="Handling outliers">
       <option name="closed" value="true" />
