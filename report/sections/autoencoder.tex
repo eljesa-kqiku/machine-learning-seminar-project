@@ -172,20 +172,32 @@ To finish off, we print the confusion matrix, since in our case, as it was also 
 
 \noindent The result after running the code above are given on the table \ref{tab:autoencoder_classification_report}.
 
-\begin{table}[h!]
+\begin{figure}[h!]
     \centering
-    \begin{tabular}{lcccc}
-        \hline
-        \textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Support} \\
-        \hline
-        0.0 & 0.77 & 0.68 & 0.72 & 10604 \\
-        1.0 & 0.71 & 0.79 & 0.75 & 10604 \\
-        \hline
-        \textbf{Accuracy} & \multicolumn{3}{c}{0.74} & 21208 \\
-        \textbf{Macro Avg} & 0.74 & 0.74 & 0.74 & 21208 \\
-        \textbf{Weighted Avg} & 0.74 & 0.74 & 0.74 & 21208 \\
-        \hline
-    \end{tabular}
-    \caption{Classification Report for Autoencoder}
-    \label{tab:autoencoder_classification_report}
-\end{table}
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \begin{tabular}{lcccc}
+            \hline
+            \textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Support} \\
+            \hline
+            0.0 & 0.77 & 0.68 & 0.72 & 10604 \\
+            1.0 & 0.71 & 0.79 & 0.75 & 10604 \\
+            \hline
+            \textbf{Accuracy} & \multicolumn{3}{c}{0.74} & 21208 \\
+            \textbf{Macro Avg} & 0.74 & 0.74 & 0.74 & 21208 \\
+            \textbf{Weighted Avg} & 0.74 & 0.74 & 0.74 & 21208 \\
+            \hline
+        \end{tabular}
+        \caption{Classification Report for Autoencoder}
+        \label{tab:autoencoder_classification_report}
+
+        \vspace{1.5cm}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/autoencoder_confusion_matrix.png}
+        \caption{Autoencoder Confusion Matrix}
+        \label{fig:autoencoder_cfm}
+    \end{minipage}
+\end{figure}
