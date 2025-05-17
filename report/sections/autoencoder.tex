@@ -7,7 +7,7 @@ We have provided a diagram of our encoder in figure \ref{fig:autoencoder}. This 
     \includegraphics[width=0.7\textwidth]{images/autoencoder.png}
     \caption{Autoencoder Architecture}
     \label{fig:autoencoder}
-\end{figure}\\
+\end{figure}
 
 \subsubsection{Finding the best match for the parameters}
 In order to try the best algorithms and the best parameters we had tried many combinations on the dataset.
@@ -33,7 +33,7 @@ All the tested algorithms and their recall is listed on the 4 below tables: \ref
 
 \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
         \rowcolor{lightgreen}
         \textbf{Model} & \textbf{Activation} & \textbf{Optimizer} & \textbf{Loss} & \textbf{Learning Rate} & \textbf{Accuracy} & \textbf{Recall} \\
@@ -54,13 +54,13 @@ All the tested algorithms and their recall is listed on the 4 below tables: \ref
         \hline
         Model 8 & ReLU & SGD & Binary CE & 0.3 & 0.6868 & 0.6868 \\
         \hline
-    \end{tabularx}
+    \end{tabular}
     \caption{Parameter testing for autoencoder}
     \label{tab:op1}
 \end{table}
 \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
         \rowcolor{lightgreen}
         \textbf{Model} & \textbf{Activation} & \textbf{Optimizer} & \textbf{Loss} & \textbf{Learning Rate} & \textbf{Accuracy} & \textbf{Recall} \\
@@ -81,14 +81,15 @@ All the tested algorithms and their recall is listed on the 4 below tables: \ref
         \hline
         Model 16 & Sigmoid & SGD & Binary CE & 0.3 & -- & -- \\
         \hline
-    \end{tabularx}
+    \end{tabular}
     \caption{Parameter testing for autoencoder}
     \label{tab:op2}
 \end{table}
 \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
+        \rowcolor{lightgreen}
         \textbf{Model} & \textbf{Activation} & \textbf{Optimizer} & \textbf{Loss} & \textbf{Learning Rate} & \textbf{Accuracy} & \textbf{Recall} \\
         \hline
         Model 17 & Leaky ReLU & Adam & MSE & 0.1 & 0.7415 & 0.7415 \\
@@ -107,14 +108,15 @@ All the tested algorithms and their recall is listed on the 4 below tables: \ref
         \hline
         Model 24 & Leaky ReLU & SGD & Binary CE & 0.3 & 0.7320 & 0.7320 \\
         \hline
-    \end{tabularx}
+    \end{tabular}
     \caption{Parameter testing for autoencoder}
     \label{tab:op3}
 \end{table}
 \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|c|c|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
+        \rowcolor{lightgreen}
         \textbf{Model} & \textbf{Activation} & \textbf{Optimizer} & \textbf{Loss} & \textbf{Learning Rate} & \textbf{Accuracy} & \textbf{Recall} \\
         \hline
         Model 17 & Leaky ReLU & Adam & MSE & 0.1 & 0.7415 & 0.7415 \\
@@ -133,7 +135,7 @@ All the tested algorithms and their recall is listed on the 4 below tables: \ref
         \hline
         Model 24 & Leaky ReLU & SGD & Binary CE & 0.3 & 0.7320 & 0.7320 \\
         \hline
-    \end{tabularx}
+    \end{tabular}
     \caption{Parameter testing for autoencoder}
     \label{tab:op4}
 \end{table}

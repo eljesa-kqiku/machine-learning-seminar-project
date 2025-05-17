@@ -1,5 +1,5 @@
 \section{Algorithm implementation}
-Next, we will implement the three chosen algorithms: MLP (Multilayer Perceptron), Autoencoder, and [Third Algorithm]. These algorithms have been selected due to their suitability for classification problems and their ability to handle structured and complex datasets. First, we will provide a brief introduction to each algorithm, highlighting their key characteristics. After that, we will proceed with the implementation and performance analysis for our dataset.
+Next, we will implement the three chosen algorithms: MLP (Multilayer Perceptron), Autoencoder, and Naive Bayes. These algorithms have been selected due to their suitability for classification problems and their ability to handle structured and complex datasets. First, we will provide a brief introduction to each algorithm, highlighting their key characteristics. After that, we will proceed with the implementation and performance analysis for our dataset.
 
 \subsection{Multilayer Perceptron (MLP)}
 
@@ -34,8 +34,90 @@ The best parameters found were:
 \texttt{\{'mlp\_\_activation': 'relu', 'mlp\_\_alpha': 0.001, 'mlp\_\_hidden\_layer\_sizes': (100, 50), 'mlp\_\_learning\_rate': 'adaptive', 'mlp\_\_max\_iter': 500, 'mlp\_\_solver': 'sgd'\}}
 \end{quote}
 
-\lstinputlisting[language=python]{../code/mlp.py}
-
+\begin{lstlisting}[language=Python, label={lst:mlp_classifier}]
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    
+    from sklearn.model_selection import train_test_split, cross_validate
+    from sklearn.neural_network import MLPClassifier
+    from sklearn.metrics import (
+        accuracy_score, precision_score, recall_score,
+        f1_score, confusion_matrix, ConfusionMatrixDisplay,
+        classification_report
+    )
+    
+    # 1. Load data
+    df = pd.read_csv("datasets/diabetes_scaled.csv")
+    
+    # 2. Features & Labels
+    X = df.drop("Diabetes_binary", axis=1)
+    y = df["Diabetes_binary"]
+    
+    # 3. Train/Test
+    X_train = pd.read_csv("datasets/X_train.csv")
+    X_test = pd.read_csv("datasets/X_test.csv")
+    y_train = pd.read_csv("datasets/y_train.csv")
+    y_test = pd.read_csv("datasets/y_test.csv")
+    
+    # 4. Define MLP model
+    mlp = MLPClassifier(
+        hidden_layer_sizes=(100, 50),
+        activation='relu',
+        solver='sgd',
+        alpha=0.001,
+        learning_rate='adaptive',
+        max_iter=500,
+        random_state=42
+    )
+    
+    # 5. Train model
+    mlp.fit(X_train, y_train)
+    
+    # 6. Predict on test set
+    y_pred = mlp.predict(X_test)
+    
+    # Plot loss curve for full feature set
+    plt.figure(figsize=(8, 4))
+    plt.plot(mlp.loss_curve_)
+    plt.title("Loss Curve (Full Feature Set)")
+    plt.xlabel("Iterations")
+    plt.ylabel("Loss")
+    plt.grid(True)
+    plt.show()
+    
+    # 7. Evaluate metrics
+    print("Performance on Full Feature Set:")
+    print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+    print(f"Precision: {precision_score(y_test, y_pred):.4f}")
+    print(f"Recall: {recall_score(y_test, y_pred):.4f}")
+    print(f"F1 Score: {f1_score(y_test, y_pred):.4f}")
+    
+    # 8. Confusion matrix visualization
+    cm = confusion_matrix(y_test, y_pred)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=mlp.classes_)
+    disp.plot(cmap=plt.cm.Blues)
+    plt.title("Confusion Matrix (Full Feature Set)")
+    plt.show()
+    
+    # 9. Cross-validation without plot
+    cv_results = cross_validate(
+        mlp, X_train, y_train,
+        cv=5,
+        scoring=["accuracy", "precision", "recall", "f1"],
+        return_train_score=True
+    )
+    
+    print("\nCross-Validation Mean Scores (5-Fold):")
+    for metric in ["accuracy", "precision", "recall", "f1"]:
+        test_score = np.mean(cv_results[f'test_{metric}'])
+        train_score = np.mean(cv_results[f'train_{metric}'])
+        print(f"{metric.capitalize()}: Train = {train_score:.4f}, Test = {test_score:.4f}")
+    
+    print("\nDetailed Classification Report (Full Feature Set):")
+    print(classification_report(y_test, y_pred, target_names=["No Diabetes", "Diabetes"]))
+    \end{lstlisting}
+    
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/our-mlp-diagram.png} % Make sure the filename matches
