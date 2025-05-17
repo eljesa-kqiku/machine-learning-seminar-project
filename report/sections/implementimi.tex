@@ -156,4 +156,14 @@ The loss curve for the diabetes dataset shows a rapid initial decrease followed 
 
 \subsection{Autoencoder}
 
-\subsection{Third algorithm}
+\subsection{Naive Bayes}
+The Naive Bayes algorithm offers a straightforward yet often surprisingly effective approach to supervised learning, particularly for classification tasks like predicting diabetes status. At its core, it leverages Bayes' Theorem, a fundamental concept in probability that allows us to update the probability of an event based on new evidence. What makes Naive Bayes "naive" is its key simplifying assumption: it treats every feature in the dataset as if it were completely independent of all other features, given the class label (in our case, whether an individual has diabetes or not).
+The algorithm works by learning the conditional probability of each feature value for each class. For instance, it calculates the probability of having a certain BMI range given that the individual has diabetes, and the probability of having the same BMI range given that they do not have diabetes. It does this for all features in our dataset. When presented with a new individual's health profile, Naive Bayes uses these learned probabilities, along with the overall prevalence of diabetes in the training data (the prior probability), to calculate the probability of that individual belonging to each class (diabetes or no diabetes). The class with the highest calculated probability is then assigned as the prediction.
+The mathematical foundation lies in Bayes' Theorem:
+
+$$P(\text{Class}|\text{Features}) = \frac{P(\text{Class}) \times P(\text{Features}|\text{Class})}{P(\text{Features})}$$
+
+The "naive" independence assumption simplifies the term $P(\text{Features}|\text{Class})$ into the product of the individual feature probabilities:
+
+$$P(x_1, x_2, ..., x_n|\text{Class}) = P(x_1|\text{Class}) \times P(x_2|\text{Class}) \times ... \times P(x_n|\text{Class})$$
+For our study, Naive Bayes presents a compelling option due to its speed, ease of implementation, and ability to handle datasets with numerous features. Even though the health indicators in our dataset are likely not entirely independent, the algorithm's empirical success in various domains suggests it can still provide valuable insights and potentially strong predictive performance for identifying diabetes risk. Its simplicity also makes it a good baseline model against which to compare the performance of more complex algorithms like MLP and Autoencoder.
