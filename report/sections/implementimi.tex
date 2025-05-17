@@ -175,7 +175,7 @@ There are several variants of Naive Bayes classifiers, each suited to different 
 
 Overall, the simplicity of Naive Bayes makes it an excellent baseline model against which to compare more complex algorithms like Multilayer Perceptron (MLP) and Autoencoder. While it may not capture intricate interactions between features as effectively as MLP, Naive Bayes remains a solid and interpretable choice for predicting diabetes risk, offering a good balance between performance and computational efficiency.
 \newline
-\subsubsection{Implementation and Evaluation}\\
+\subsubsection{Implementation and Evaluation}
 
 For the implementation of the Naive Bayes classifier, we utilized the Gaussian Naive Bayes variant due to the presence of both continuous and binary features in the dataset. The model was trained on the preprocessed diabetes dataset, where continuous features such as BMI and Age were assumed to follow a Gaussian distribution within each class. Binary features, including indicators like HighBP and Smoker, were also incorporated directly without additional transformation.
 
@@ -183,8 +183,9 @@ To ensure consistency in evaluation, we trained the model using the same trainin
 
 To evaluate the performance of the Naive Bayes classifier, several metrics were employed, including accuracy, precision, recall, and the F1-score. Given the medical context and the importance of correctly identifying positive cases, special emphasis was placed on recall and F1-score to assess the model's ability to detect individuals with diabetes effectively.
 
-\\
+
 Below is the Python code used for training and evaluating the Gaussian Naive Bayes classifier:
+
 \lstinputlisting[language=python]{../code/naiveBayes.py}
 
 \subsubsection*{4.3.2 Results on Full Feature Set (Naive Bayes)}
