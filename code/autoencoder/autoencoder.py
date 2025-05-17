@@ -21,6 +21,7 @@ class Autoencoder:
         encoder = keras.layers.Dense(encoding_dim, activation1)(input_layer)
         decoder = keras.layers.Dense(self.input_dim, activation2)(encoder)
 
+
         self.autoencoder = keras.Model(inputs=input_layer, outputs=decoder)
         self.encoder_model = keras.Model(inputs=input_layer, outputs=encoder)
 

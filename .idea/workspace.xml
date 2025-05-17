@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4bd0118d-ee39-4807-8648-485f96be9aca" name="Changes" comment="Finding the best parameters for the Autoencoder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/autoencoder/autoencoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/autoencoder/autoencoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/autoencoder/parameter_tuning.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/autoencoder/parameter_tuning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/sections/paraprocesimi.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report/sections/paraprocesimi.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,7 @@
         <expand-macros-in-environment-variables>false</expand-macros-in-environment-variables>
         <before-run-command />
         <main-file>$PROJECT_DIR$/report/main.tex</main-file>
-        <output-path>$PROJECT_DIR$/out</output-path>
+        <output-path>$PROJECT_DIR$/report</output-path>
         <auxil-path>{projectDir}/auxil</auxil-path>
         <compile-twice>false</compile-twice>
         <output-format>PDF</output-format>
@@ -107,6 +106,10 @@
       </texify>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="LaTeX.main" />
+      <item itemvalue="LaTeX.main (1)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="LaTeX.main" />
@@ -134,6 +137,7 @@
       <workItem from="1747207398988" duration="1630000" />
       <workItem from="1747262054010" duration="2477000" />
       <workItem from="1747381350563" duration="30000" />
+      <workItem from="1747490273017" duration="9717000" />
     </task>
     <task id="LOCAL-00001" summary="Handling outliers">
       <option name="closed" value="true" />

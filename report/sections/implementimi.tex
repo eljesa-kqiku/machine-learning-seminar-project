@@ -1,5 +1,5 @@
 \section{Algorithm implementation}
-Next, we will implement the three chosen algorithms: MLP (Multilayer Perceptron), Autoencoder, and [Third Algorithm]. These algorithms have been selected due to their suitability for classification problems and their ability to handle structured and complex datasets. First, we will provide a brief introduction to each algorithm, highlighting their key characteristics. After that, we will proceed with the implementation and performance analysis for our dataset.
+Next, we will implement the three chosen algorithms: MLP (Multilayer Perceptron), Autoencoder, and Naive Bayes. These algorithms have been selected due to their suitability for classification problems and their ability to handle structured and complex datasets. First, we will provide a brief introduction to each algorithm, highlighting their key characteristics. After that, we will proceed with the implementation and performance analysis for our dataset.
 
 \subsection{Multilayer Perceptron (MLP)}
 
@@ -34,8 +34,90 @@ The best parameters found were:
 \texttt{\{'mlp\_\_activation': 'relu', 'mlp\_\_alpha': 0.001, 'mlp\_\_hidden\_layer\_sizes': (100, 50), 'mlp\_\_learning\_rate': 'adaptive', 'mlp\_\_max\_iter': 500, 'mlp\_\_solver': 'sgd'\}}
 \end{quote}
 
-\lstinputlisting[language=python]{../code/mlp.py}
-
+\begin{lstlisting}[language=Python, label={lst:mlp_classifier}]
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    
+    from sklearn.model_selection import train_test_split, cross_validate
+    from sklearn.neural_network import MLPClassifier
+    from sklearn.metrics import (
+        accuracy_score, precision_score, recall_score,
+        f1_score, confusion_matrix, ConfusionMatrixDisplay,
+        classification_report
+    )
+    
+    # 1. Load data
+    df = pd.read_csv("datasets/diabetes_scaled.csv")
+    
+    # 2. Features & Labels
+    X = df.drop("Diabetes_binary", axis=1)
+    y = df["Diabetes_binary"]
+    
+    # 3. Train/Test
+    X_train = pd.read_csv("datasets/X_train.csv")
+    X_test = pd.read_csv("datasets/X_test.csv")
+    y_train = pd.read_csv("datasets/y_train.csv")
+    y_test = pd.read_csv("datasets/y_test.csv")
+    
+    # 4. Define MLP model
+    mlp = MLPClassifier(
+        hidden_layer_sizes=(100, 50),
+        activation='relu',
+        solver='sgd',
+        alpha=0.001,
+        learning_rate='adaptive',
+        max_iter=500,
+        random_state=42
+    )
+    
+    # 5. Train model
+    mlp.fit(X_train, y_train)
+    
+    # 6. Predict on test set
+    y_pred = mlp.predict(X_test)
+    
+    # Plot loss curve for full feature set
+    plt.figure(figsize=(8, 4))
+    plt.plot(mlp.loss_curve_)
+    plt.title("Loss Curve (Full Feature Set)")
+    plt.xlabel("Iterations")
+    plt.ylabel("Loss")
+    plt.grid(True)
+    plt.show()
+    
+    # 7. Evaluate metrics
+    print("Performance on Full Feature Set:")
+    print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+    print(f"Precision: {precision_score(y_test, y_pred):.4f}")
+    print(f"Recall: {recall_score(y_test, y_pred):.4f}")
+    print(f"F1 Score: {f1_score(y_test, y_pred):.4f}")
+    
+    # 8. Confusion matrix visualization
+    cm = confusion_matrix(y_test, y_pred)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=mlp.classes_)
+    disp.plot(cmap=plt.cm.Blues)
+    plt.title("Confusion Matrix (Full Feature Set)")
+    plt.show()
+    
+    # 9. Cross-validation without plot
+    cv_results = cross_validate(
+        mlp, X_train, y_train,
+        cv=5,
+        scoring=["accuracy", "precision", "recall", "f1"],
+        return_train_score=True
+    )
+    
+    print("\nCross-Validation Mean Scores (5-Fold):")
+    for metric in ["accuracy", "precision", "recall", "f1"]:
+        test_score = np.mean(cv_results[f'test_{metric}'])
+        train_score = np.mean(cv_results[f'train_{metric}'])
+        print(f"{metric.capitalize()}: Train = {train_score:.4f}, Test = {test_score:.4f}")
+    
+    print("\nDetailed Classification Report (Full Feature Set):")
+    print(classification_report(y_test, y_pred, target_names=["No Diabetes", "Diabetes"]))
+    \end{lstlisting}
+    
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/our-mlp-diagram.png} % Make sure the filename matches
@@ -155,6 +237,7 @@ The loss curve for the diabetes dataset shows a rapid initial decrease followed 
 
 
 \subsection{Autoencoder}
+\input{sections/autoencoder}
 
 \subsection{Naive Bayes}
 The Naive Bayes algorithm offers a straightforward yet often surprisingly effective approach to supervised learning, particularly for classification tasks like predicting diabetes status. At its core, it leverages Bayes' Theorem, a fundamental concept in probability that allows us to update the probability of an event based on new evidence. What makes Naive Bayes "naive" is its key simplifying assumption: it treats every feature in the dataset as if it were completely independent of all other features, given the class label (in our case, whether an individual has diabetes or not).
@@ -174,7 +257,7 @@ There are several variants of Naive Bayes classifiers, each suited to different 
 
 Overall, the simplicity of Naive Bayes makes it an excellent baseline model against which to compare more complex algorithms like Multilayer Perceptron (MLP) and Autoencoder. While it may not capture intricate interactions between features as effectively as MLP, Naive Bayes remains a solid and interpretable choice for predicting diabetes risk, offering a good balance between performance and computational efficiency.
 \newline
-\subsubsection{Implementation and Evaluation}\\
+\subsubsection{Implementation and Evaluation}
 
 For the implementation of the Naive Bayes classifier, we utilized the Gaussian Naive Bayes variant due to the presence of both continuous and binary features in the dataset. The model was trained on the preprocessed diabetes dataset, where continuous features such as BMI and Age were assumed to follow a Gaussian distribution within each class. Binary features, including indicators like HighBP and Smoker, were also incorporated directly without additional transformation.
 
@@ -182,8 +265,9 @@ To ensure consistency in evaluation, we trained the model using the same trainin
 
 To evaluate the performance of the Naive Bayes classifier, several metrics were employed, including accuracy, precision, recall, and the F1-score. Given the medical context and the importance of correctly identifying positive cases, special emphasis was placed on recall and F1-score to assess the model's ability to detect individuals with diabetes effectively.
 
-\\
+
 Below is the Python code used for training and evaluating the Gaussian Naive Bayes classifier:
+
 \lstinputlisting[language=python]{../code/naiveBayes.py}
 
 \subsubsection*{4.3.2 Results on Full Feature Set (Naive Bayes)}

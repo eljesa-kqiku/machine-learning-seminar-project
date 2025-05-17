@@ -15,7 +15,7 @@ The implementation can be seen in the code below, and the visual results are pre
 
 \begin{figure}[H]
     \centering
-oo    \includegraphics[width=0.7\textwidth]{images/diabetes_correlation_matrix.png}
+    \includegraphics[width=0.7\textwidth]{images/diabetes_correlation_matrix.png}
     \caption{Correlation matrix between features.}
     \label{fig:correlation-matrix}
 \end{figure}
@@ -23,7 +23,7 @@ oo    \includegraphics[width=0.7\textwidth]{images/diabetes_correlation_matrix.p
 From the heatmap visualization, we observe that some features are more strongly correlated with each other. We then filtered the feature pairs that have an absolute correlation higher than 0.45. The implementation of this filtering process in Python is shown below:
 \\
 \lstinputlisting[language=python]{../code/correlation_filter.py}
-\\
+
 The results are displayed in Table \ref{table:correlation-filtered}:
 
 \begin{table}[ht]
@@ -42,22 +42,22 @@ Education  & Income     & 0.460565 \\
 \caption{Feature pairs with correlation $c > |0.45|$}
 \label{table:correlation-filtered}
 \end{table}
-\\
+
 \subsection*{Feature Selection Strategy}
 To optimize the feature set for model performance, we implemented a two-step strategy:
 
-\subsubsection*{1. Removal of weakly correlated features}\\
+\subsubsection*{1. Removal of weakly correlated features}
 To address weak correlation with the target variable, we will remove features exhibiting an absolute Pearson correlation coefficient of less than 0.1 with the 'Diabetes\_binary' column. This step aims to eliminate features with a minimal linear relationship to the outcome we are trying to predict, potentially reducing noise and simplifying the model.
 
 
-\subsubsection*{2. Mitigation of multicollinearity}\\
+\subsubsection*{2. Mitigation of multicollinearity}
 Subsequently, to mitigate the issue of multicollinearity among the remaining features, we will identify pairs of features with a high absolute Pearson correlation coefficient (greater than 0.45) as shown in table 2. For each such pair, one of the features will be removed. The decision on which feature to remove will be based on its correlation with the target variable; the feature with the weaker absolute correlation to 'Diabetes\_binary' will be prioritized for removal. This strategy aims to reduce redundancy in the feature set, which can lead to instability and interpretability issues in some models, without significantly sacrificing predictive power related to the target.
 \\
 \newline
 The implementation process in Python is shown below:
 \\
 \lstinputlisting[language=python]{../code/afterCorrelation.py}
-\\
+
 
 
 
