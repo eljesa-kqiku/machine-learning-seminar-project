@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4bd0118d-ee39-4807-8648-485f96be9aca" name="Changes" comment="Finished the outliers part">
-      <change afterPath="$PROJECT_DIR$/code/autoencoder/autoencoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/autoencoder/parameter_tuning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/det9.10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/autoencoder/autoencoder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/out/main.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/sections/referenca.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report/sections/referenca.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
