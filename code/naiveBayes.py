@@ -34,7 +34,7 @@ print(f"F1 Score: {f1_score(y_test, y_pred):.4f}")
 cm = confusion_matrix(y_test, y_pred)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=gnb.classes_)
 disp.plot(cmap=plt.cm.Oranges)
-plt.title("Confusion Matrix (Naive Bayes - Full Feature Set)")
+plt.title("Confusion Matrix (Naive Bayes)")
 plt.show()
 
 # 5-Fold Cross-validation
