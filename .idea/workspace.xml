@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4bd0118d-ee39-4807-8648-485f96be9aca" name="Changes" comment="Added dataset after clea">
+    <list default="true" id="4bd0118d-ee39-4807-8648-485f96be9aca" name="Changes" comment="Finished the outliers part">
+      <change afterPath="$PROJECT_DIR$/code/autoencoder/autoencoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.aux" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/main.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.fdb_latexmk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/main.fls" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.fls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.synctex.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/main.toc" beforeDir="false" afterPath="$PROJECT_DIR$/report/main.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/sections/paraprocesimi.tex" beforeDir="false" afterPath="$PROJECT_DIR$/report/sections/paraprocesimi.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/det9.10.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747263035236</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished the outliers part">
+      <option name="closed" value="true" />
+      <created>1747429913422</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747429913422</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +185,7 @@
     <MESSAGE value="Handling outliers" />
     <MESSAGE value="Added gitignore with latex output files" />
     <MESSAGE value="Added details about outliers in the report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added details about outliers in the report" />
+    <MESSAGE value="Finished the outliers part" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished the outliers part" />
   </component>
 </project>
