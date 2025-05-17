@@ -60,4 +60,16 @@ The implementation process in Python is shown below:
 
 
 
+\subsubsection{Dataset Splitting}
+
+Following the feature selection process, the cleaned dataset was divided into training and testing subsets to facilitate model evaluation. Using the scikit-learn library, we applied stratified splitting to maintain the proportion of the target variable (\"Diabetes\_binary\") across both sets. Specifically, 70$\%$ of the data was allocated for training and 30$\%$ for testing. The resulting subsets were saved as separate CSV files for subsequent model development and validation.
+
+
+The Python implementation for this step is shown below:
+
+
+\lstinputlisting[language=python]{../code/split_data.py}
+
+
+
 
