@@ -17,10 +17,11 @@ df = pd.read_csv("datasets/diabetes_scaled.csv")
 X = df.drop("Diabetes_binary", axis=1)
 y = df["Diabetes_binary"]
 
-# 3. Train/Test split
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, stratify=y, random_state=42
-)
+# 3. Train/Test
+X_train = pd.read_csv("datasets/X_train.csv")
+X_test = pd.read_csv("datasets/X_test.csv")
+y_train = pd.read_csv("datasets/y_train.csv")
+y_test = pd.read_csv("datasets/y_test.csv")
 
 # 4. Define MLP model
 mlp = MLPClassifier(
