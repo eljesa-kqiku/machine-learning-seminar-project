@@ -40,6 +40,7 @@ for _, row in filtered_high_corr.iterrows():
             drop_multicollinearity.add(f2)
 
 df_final = df_dropped_low.drop(columns=list(drop_multicollinearity))
+df_final.to_csv('datasets/datasetF.csv', index=False)
 print("\nFeatures dropped for multicollinearity:", list(drop_multicollinearity))
 print("\nFinal features:", df_final.columns.tolist())
 
