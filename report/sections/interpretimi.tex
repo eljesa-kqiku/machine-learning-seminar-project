@@ -1,1 +1,33 @@
 \section{Result interpretation}
+
+\subsection{Comparison of Algorithms}
+
+In this section, we compare the three applied algorithms—Multilayer Perceptron (MLP), Autoencoder, and Gaussian Naive Bayes—using four key performance metrics: \textbf{Accuracy}, \textbf{Precision}, \textbf{Recall}, and \textbf{F1 Score}. These metrics help us understand each model’s strengths and guide the choice of the most suitable method for our diabetes‐prediction task.
+
+We generally use Accuracy as the default comparison metric since it gives an overall sense of correctness. However, given the medical context, we place extra focus on Recall (to minimize missed diabetic cases) and Precision (to avoid false alarms) as needed.
+
+Before presenting the performance metrics, we reflect on the core questions guiding this study. First, we sought to determine how effectively different machine learning models could predict diabetes risk. The results below compare the three models in terms of their ability to make accurate and meaningful predictions. Second, we investigated whether a limited set of features could generate reliable predictions. In this context, dimensionality reduction through an Autoencoder served to test whether compressed representations of the original features could still preserve predictive power. Similarly, for the Multilayer Perceptron (MLP), we implemented an additional experiment using a reduced feature set, which included manually selected features and their interaction terms. This allowed us to evaluate how feature selection (rather than automated compression) impacts model performance. The following table summarizes how each model performed.
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ |l|l|r|r|r|r| }
+\hline
+\textbf{Algorithm} & \textbf{Parameters} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1 Score} \\
+\hline
+MLP & hidden\_layers=(100,50), activation=ReLU, solver=SGD & 0.7526 & 0.7362 & 0.8011 & 0.7673 \\
+Autoencoder & encoder=(32,16), decoder=(16,32), activation=ReLU & 0.7400 & 0.7400 & 0.7400 & 0.7400 \\
+Gaussian NB & default (GaussianNB) & 0.7381 & 0.7300 & 0.7558 & 0.7427 \\
+\hline
+\end{tabular}
+}
+\caption{Performance comparison of MLP, Autoencoder, and Gaussian Naive Bayes}
+\label{table:comparison}
+\end{table}
+
+In a medical setting, missing a true diabetic case (false negative) is far more critical than issuing a false alarm. Thus, we prioritize models with higher recall. Both MLP and Gaussian NB reach recall levels around 0.80, while the Autoencoder's recall is slightly lower at 0.74.
+MLP offers the strongest overall balance (highest F1) thanks to its capacity to learn complex, non‐linear feature interactions. Gaussian NB remains a lightweight baseline with competitive recall and is very fast to train.
+An Autoencoder can capture latent structure and reduce noise in the feature space. Even though its overall performance (F1 and recall) is slightly below MLP, it still provides a stable result and is a valuable tool when feature extraction or dimensionality reduction is required.
+
+
+\subsection{Reasoning}
+Among the three models evaluated, the Multilayer Perceptron (MLP) demonstrates the best overall performance, particularly excelling in Recall (0.8011) and F1 Score (0.7673). These metrics are crucial in a medical prediction task like diabetes detection, where identifying true positives is a top priority. While the Autoencoder performs reasonably well and the Gaussian Naive Bayes provides a fast and interpretable solution, the MLP's ability to capture complex patterns and achieve the highest accuracy makes it the most suitable choice for deployment in this context.
