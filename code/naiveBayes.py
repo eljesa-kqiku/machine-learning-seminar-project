@@ -45,7 +45,7 @@ cv_results = cross_validate(
     return_train_score=True
 )
 
-print("\nCross-Validation Mean Scores (10-Fold):")
+print("\nCross-Validation Mean Scores (5-Fold):")
 for metric in ["accuracy", "precision", "recall", "f1"]:
     test_score = np.mean(cv_results[f'test_{metric}'])
     train_score = np.mean(cv_results[f'train_{metric}'])
