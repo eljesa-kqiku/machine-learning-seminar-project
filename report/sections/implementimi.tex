@@ -166,4 +166,49 @@ $$P(\text{Class}|\text{Features}) = \frac{P(\text{Class}) \times P(\text{Feature
 The "naive" independence assumption simplifies the term $P(\text{Features}|\text{Class})$ into the product of the individual feature probabilities:
 
 $$P(x_1, x_2, ..., x_n|\text{Class}) = P(x_1|\text{Class}) \times P(x_2|\text{Class}) \times ... \times P(x_n|\text{Class})$$
-For our study, Naive Bayes presents a compelling option due to its speed, ease of implementation, and ability to handle datasets with numerous features. Even though the health indicators in our dataset are likely not entirely independent, the algorithm's empirical success in various domains suggests it can still provide valuable insights and potentially strong predictive performance for identifying diabetes risk. Its simplicity also makes it a good baseline model against which to compare the performance of more complex algorithms like MLP and Autoencoder.
+
+
+For our diabetes dataset, Naive Bayes presents a compelling choice due to its speed, ease of implementation, and its ability to effectively handle datasets with numerous features. Although the health indicators in the dataset are unlikely to be completely independent—a key assumption of Naive Bayes—the algorithm has demonstrated strong empirical success across various domains. This suggests that it can still provide valuable insights and deliver reliable predictive performance in identifying individuals at risk of diabetes.
+
+There are several variants of Naive Bayes classifiers, each suited to different types of data. Gaussian Naive Bayes is commonly used when features are continuous and assumed to follow a normal distribution. Multinomial Naive Bayes typically applies to discrete features, while Bernoulli Naive Bayes is designed for binary or boolean features. Given that our dataset contains both continuous variables such as BMI and Age, as well as binary indicators like HighBP and Smoker status, Gaussian Naive Bayes is the most appropriate choice. This model assumes that the continuous features are normally distributed within each class, which aligns well with the nature of our data.
+
+Overall, the simplicity of Naive Bayes makes it an excellent baseline model against which to compare more complex algorithms like Multilayer Perceptron (MLP) and Autoencoder. While it may not capture intricate interactions between features as effectively as MLP, Naive Bayes remains a solid and interpretable choice for predicting diabetes risk, offering a good balance between performance and computational efficiency.
+\newline
+\subsubsection{Implementation and Evaluation}\\
+
+For the implementation of the Naive Bayes classifier, we utilized the Gaussian Naive Bayes variant due to the presence of both continuous and binary features in the dataset. The model was trained on the preprocessed diabetes dataset, where continuous features such as BMI and Age were assumed to follow a Gaussian distribution within each class. Binary features, including indicators like HighBP and Smoker, were also incorporated directly without additional transformation.
+
+To ensure consistency in evaluation, we trained the model using the same training and testing sets applied in all algorithms we used. Additionally, we used 5-fold cross-validation to assess the model’s generalization ability.
+
+To evaluate the performance of the Naive Bayes classifier, several metrics were employed, including accuracy, precision, recall, and the F1-score. Given the medical context and the importance of correctly identifying positive cases, special emphasis was placed on recall and F1-score to assess the model's ability to detect individuals with diabetes effectively.
+
+\\
+Below is the Python code used for training and evaluating the Gaussian Naive Bayes classifier:
+\lstinputlisting[language=python]{../code/naiveBayes.py}
+
+\subsubsection*{4.3.2 Results on Full Feature Set (Naive Bayes)}
+
+\begin{verbatim}
+Accuracy: 0.7381
+Precision: 0.7300
+Recall: 0.7558
+F1 Score: 0.7427
+\end{verbatim}
+This initial evaluation of the Gaussian Naive Bayes model on the full feature set yields an accuracy of 0.7381. The model demonstrates a precision of 0.7300, indicating that when it predicts "Diabetes," it is correct approximately 73\% of the time. The recall of 0.7558 suggests that the model successfully identifies about 75.6\% of the actual diabetic cases. The F1-score, which balances precision and recall, is 0.7427.
+
+\paragraph*{Detailed Classification Report (Naive Bayes):}
+\begin{verbatim}
+              precision    recall  f1-score   support
+
+  No Diabetes       0.76      0.66      0.71      6753
+     Diabetes       0.71      0.81      0.76      7000
+
+     accuracy                           0.73     13753
+    macro avg       0.74      0.74      0.73     13753
+ weighted avg       0.73      0.73      0.73     13753
+\end{verbatim}
+The classification report offers a more granular view of the model's performance for each class. For the "No Diabetes" class, the precision is 0.76 and the recall is 0.66. This means that 76\% of the predictions for "No Diabetes" were correct, and 66\% of all actual "No Diabetes" cases were identified.
+
+For the "Diabetes" class, the precision is 0.71, and the recall is 0.81. This indicates that 71\% of the "Diabetes" predictions were correct, and 81\% of all actual "Diabetes" cases were identified.
+
+The overall accuracy is 0.73, consistent with the initial performance evaluation. The macro and weighted averages for precision, recall, and F1-score provide a consolidated view of the model's effectiveness across both classes. The higher recall for the "Diabetes" class suggests that the model is better at identifying positive cases, which is often a crucial consideration in medical applications.
