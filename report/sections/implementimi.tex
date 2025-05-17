@@ -270,7 +270,7 @@ Below is the Python code used for training and evaluating the Gaussian Naive Bay
 
 \lstinputlisting[language=python]{../code/naiveBayes.py}
 
-\subsubsection*{4.3.2 Results on Full Feature Set (Naive Bayes)}
+\subsubsection{Results (Naive Bayes)}
 
 \begin{verbatim}
 Accuracy: 0.7381
@@ -291,6 +291,12 @@ This initial evaluation of the Gaussian Naive Bayes model on the full feature se
     macro avg       0.74      0.74      0.73     13753
  weighted avg       0.73      0.73      0.73     13753
 \end{verbatim}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/Figure_1.png}
+    \caption{Confusion Matrix for Naive Bayes}
+\end{figure}
 The classification report offers a more granular view of the model's performance for each class. For the "No Diabetes" class, the precision is 0.76 and the recall is 0.66. This means that 76\% of the predictions for "No Diabetes" were correct, and 66\% of all actual "No Diabetes" cases were identified.
 
 For the "Diabetes" class, the precision is 0.71, and the recall is 0.81. This indicates that 71\% of the "Diabetes" predictions were correct, and 81\% of all actual "Diabetes" cases were identified.

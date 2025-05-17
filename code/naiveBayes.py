@@ -34,7 +34,7 @@ print(f"F1 Score: {f1_score(y_test, y_pred):.4f}")
 cm = confusion_matrix(y_test, y_pred)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=gnb.classes_)
 disp.plot(cmap=plt.cm.Oranges)
-plt.title("Confusion Matrix (Naive Bayes - Full Feature Set)")
+plt.title("Confusion Matrix (Naive Bayes)")
 plt.show()
 
 # 5-Fold Cross-validation
@@ -45,7 +45,7 @@ cv_results = cross_validate(
     return_train_score=True
 )
 
-print("\nCross-Validation Mean Scores (10-Fold):")
+print("\nCross-Validation Mean Scores (5-Fold):")
 for metric in ["accuracy", "precision", "recall", "f1"]:
     test_score = np.mean(cv_results[f'test_{metric}'])
     train_score = np.mean(cv_results[f'train_{metric}'])
